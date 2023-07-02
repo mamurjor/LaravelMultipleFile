@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\MOdels\File;
 
 use Illuminate\Http\Request;
 
@@ -33,9 +34,9 @@ class FileController extends Controller
             }
         }
   
-        // foreach ($files as $key => $file) {
-        //     File::create($file);
-        // }
+        foreach ($files as $key => $file) {
+            File::create($file);
+        }
      
         return back()
                 ->with('success','You have successfully upload file.');
